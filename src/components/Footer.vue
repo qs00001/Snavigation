@@ -6,6 +6,9 @@
       <span class="anthor" @click="jumpTo(copyrightLink ?? 'https://github.com/imsyy/Snavigation')">
         {{ siteAnthor }}
       </span>
+      <span v-if="ga" class="ga" @click="jumpTo('https://beian.mps.gov.cn/#/query/webSearch?code=36012202000462')">
+        {{ ga }}
+      </span>
       <span v-if="icp" class="icp" @click="jumpTo('https://beian.miit.gov.cn')">
         {{ icp }}
       </span>
@@ -25,7 +28,7 @@
         </div>
         <div class="desc">
           <n-space class="link" justify="center">
-            <n-button strong secondary @click="jumpTo('https://github.com/imsyy/Snavigation')">
+            <n-button strong secondary @click="jumpTo('https://github.com/qs00001/Snavigation')">
               Github
             </n-button>
           </n-space>
@@ -45,6 +48,7 @@ const set = setStore();
 
 // 站点数据
 const icp = import.meta.env.VITE_ICP;
+const ga = import.meta.env.VITE_GA;
 const siteName = import.meta.env.VITE_SITE_TITLE;
 const siteAnthor = import.meta.env.VITE_SITE_ANTHOR;
 const copyrightLink = import.meta.env.VITE_SITE_COPYRIGHTLINK;
@@ -94,6 +98,12 @@ const jumpTo = (url) => {
         margin-right: 4px;
       }
     }
+    .ga {
+      &::before {
+        content: "|";
+        margin-right: 4px;
+      }
+    }
     .icp {
       &::before {
         content: "|";
@@ -107,6 +117,7 @@ const jumpTo = (url) => {
       }
     }
     .anthor,
+    .ga,
     .icp,
     .about {
       cursor: pointer;
@@ -138,3 +149,4 @@ const jumpTo = (url) => {
   }
 }
 </style>
+
