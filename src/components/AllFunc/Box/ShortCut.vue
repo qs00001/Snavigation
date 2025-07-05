@@ -19,7 +19,7 @@
               @click="shortCutJump(item.url)"
             >
               <span class="name">{{ item.name }}</span>
-//            </n-grid-item>
+            </n-grid-item>
 //            <n-grid-item
 //              class="shortcut-item"
 //              @contextmenu="
@@ -32,7 +32,7 @@
 //              <SvgIcon iconName="icon-add" />
 //              <span class="name">添加捷径</span>
 //            </n-grid-item>
-          </n-grid>
+//          </n-grid>
         </n-scrollbar>
 //      </div>
 //      <div v-else class="not-shortcut">
